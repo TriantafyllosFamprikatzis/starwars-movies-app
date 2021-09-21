@@ -1,24 +1,27 @@
-.movies-container {
-  display: flex;
-}
-
 .movie {
   display: flex;
-  margin: 16px;
-  padding: 16px;
-  background-color: #230052;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 12px;
+  padding: 5px 20px;
+  border-bottom: 1px solid #e5ebee;
   text-align: center;
   color: white;
   cursor: pointer;
 }
 
-.movie-details {
-  
+.episode {
+  color: #8b99a7;
+  margin-right: 20px;
 }
 
-li {
-  width: 50%;
+.episode span {
+  margin-left: 3px;
+}
+
+.title {
+  color: #5d7183;
+}
+
+.date {
+  color: #728293;
+  margin-left: auto;
 }
 
