@@ -1,6 +1,40 @@
+.movies-container {
+  display: flex;
+}
+
 .movies-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 50%;
+  border-right: 2px solid #e5ebee;
+}
+
+.default-title {
+  text-align: center;
+}
+
+.default-movie-details {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+
+}
+
+.movie-details {
+  width: 50%;
+  text-align: left;
+  padding: 0 30px;
+}
+
+.details-title {
+  color: #244261;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.details-text {
+  color: #728293;
 }
