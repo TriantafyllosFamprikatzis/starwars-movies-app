@@ -1,3 +1,13 @@
+# Star Wars Movie App
+
+An app that lists Star Wars movies with the following functionalities 
+* List of retrieved movies
+* Filter movies
+* Sort the movie list
+* Display details of a selected movie
+* Show a default message if no movie is selected
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
