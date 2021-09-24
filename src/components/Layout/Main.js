@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import MoviesList from "../Movies/MoviesList";
-import Modal from "../UI/Modal";
+import Modal from "../UI/Modal/Modal";
+import Button from "../UI/Modal/Button/Button";
 
 import magnifyingGlass from "../../assets/magnifying_glass.jpg";
 import classes from "./Main.module.css";
@@ -83,14 +84,14 @@ function Main() {
       <Fragment>
         <div className={classes['movie-actions']}>
           <div className={classes['movie-actions__container']}>
-            <button className={classes['movie-actions__container-btn']} onClick={showSortOptionsHandler}>Sort by...</button>
+            <Button  className={classes['movie-actions__container-btn']} onClick={showSortOptionsHandler}>Sort by...</Button>
             {showSortOptions && (
               <Modal>
                 <p className={classes['modal-container__title']}>Sort by</p>
                 <span className={classes['modal-container__cancel']} onClick={hideSortOptionsHandler}>x</span>
                 <ul>
                   <li>
-                    <button className={classes['modal-container__sort-btn']} onClick={sortByEpisodeHandler}>Sort by episode</button>
+                    <Button className={classes['modal-container__sort-btn']} onClick={sortByEpisodeHandler}>Sort by episode</Button>
                   </li>
                 </ul>
               </Modal>
