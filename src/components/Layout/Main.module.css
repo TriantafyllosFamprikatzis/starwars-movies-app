@@ -48,6 +48,7 @@ img {
 .movie-actions__container {
   position: relative;
   width: 110px;
+  text-align: center;
 }
 
 .movie-actions__container-btn {
@@ -111,4 +112,20 @@ li {
 .modal-container__sort-btn:hover {
   background-color: #f8f8f9;
   transition: 0.2s ease-in-out;
+}
+
+.error {
+  padding: 10px;
+}
+
+@media (max-width: 576px) { 
+  .movie-actions {
+    display: block;
+    padding: 20px;
+  }
+
+  .movie-actions__container {
+    text-align: left;
+    margin-bottom: 5px;
+  }  
 }

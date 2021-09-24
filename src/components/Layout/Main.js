@@ -132,11 +132,11 @@ function Main() {
   }
 
   if (error) {
-    content = <p>{error}</p>;
+    content = <p className={classes.error}>{error}</p>;
   }
 
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <p className={classes.error}>Loading...</p>;
   }
 
   return <section className={classes["movies-container"]}>{content}</section>;

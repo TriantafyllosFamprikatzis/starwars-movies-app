@@ -25,3 +25,9 @@
 .content {
   position: relative; 
 }
+
+@media (max-width: 576px) { 
+  .modal {
+    left: 0;
+  }
+}
