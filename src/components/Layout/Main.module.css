@@ -93,14 +93,6 @@ ul {
 
 li {
   list-style: none;
-  text-align: left;
-  padding: 3px 0 8px 20px;
-  border-bottom: 1px solid #eceef0;
-}
-
-li:hover {
-  background-color: #f8f8f9;
-  transition: 0.2s ease-in-out;
 }
 
 .modal-container__sort-btn {
@@ -109,4 +101,14 @@ li:hover {
   background-color: white;
   color: #667685;
   font-size: 13px;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 8px 0 8px 20px;
+  border-bottom: 1px solid #eceef0;
+}
+
+.modal-container__sort-btn:hover {
+  background-color: #f8f8f9;
+  transition: 0.2s ease-in-out;
 }
