@@ -1,20 +1,24 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import MoviesList from "../Movies/MoviesList";
 import Modal from "../UI/Modal/Modal";
-import Button from "../UI/Modal/Button/Button";
+import Button from "../UI/Button/Button";
+import { uiActions } from "../../store/ui-slice";
 
 import magnifyingGlass from "../../assets/magnifying_glass.jpg";
 import classes from "./Main.module.css";
 
 function Main() {
+  const dispatch = useDispatch();
+  const showModal = useSelector((state) => state.ui.modalIsVisible);
+
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const [filteredMovies, setFilteredMovies] = useState();
   const [searchTerm, setSearchTerm] = useState("");
-
-  const [showSortOptions, setShowSortOptions] = useState(false);
 
   //Fetch Movies
   const fetchMoviesHandler = useCallback(async () => {
@@ -69,11 +73,11 @@ function Main() {
 
   //Modal Actions
   const showSortOptionsHandler = () => {
-    setShowSortOptions(true);
+    dispatch(uiActions.open());
   };
 
   const hideSortOptionsHandler = () => {
-    setShowSortOptions(false);
+    dispatch(uiActions.close());
   };
 
   //Show content
@@ -82,16 +86,31 @@ function Main() {
   if (movies.length > 0) {
     content = (
       <Fragment>
-        <div className={classes['movie-actions']}>
-          <div className={classes['movie-actions__container']}>
-            <Button  className={classes['movie-actions__container-btn']} onClick={showSortOptionsHandler}>Sort by...</Button>
-            {showSortOptions && (
+        <div className={classes["movie-actions"]}>
+          <div className={classes["movie-actions__container"]}>
+            <Button
+              className={classes["movie-actions__container-btn"]}
+              onClick={showSortOptionsHandler}
+            >
+              Sort by...
+            </Button>
+            {showModal && (
               <Modal>
-                <p className={classes['modal-container__title']}>Sort by</p>
-                <span className={classes['modal-container__cancel']} onClick={hideSortOptionsHandler}>x</span>
+                <p className={classes["modal-container__title"]}>Sort by</p>
+                <span
+                  className={classes["modal-container__cancel"]}
+                  onClick={hideSortOptionsHandler}
+                >
+                  x
+                </span>
                 <ul>
                   <li>
-                    <Button className={classes['modal-container__sort-btn']} onClick={sortByEpisodeHandler}>Sort by episode</Button>
+                    <Button
+                      className={classes["modal-container__sort-btn"]}
+                      onClick={sortByEpisodeHandler}
+                    >
+                      Sort by episode
+                    </Button>
                   </li>
                 </ul>
               </Modal>
