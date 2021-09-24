@@ -55,7 +55,6 @@ img {
   color: #637688;
   padding: 9px;
   border: 1px solid #e9ecee;
-  font-weight: 600;
   border-radius: 5px;
 }
 
@@ -110,5 +109,4 @@ li:hover {
   background-color: white;
   color: #667685;
   font-size: 13px;
-  font-weight: 600;
 }
