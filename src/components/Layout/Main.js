@@ -52,7 +52,7 @@ function Main() {
   //Filter Movies
   useEffect(() => {
     setFilteredMovies(
-      movies.filter((movie) => movie.title.toLowerCase().includes(searchTerm))
+      movies.filter((movie) => movie.title.includes(searchTerm))
     );
   }, [searchTerm, movies]);
 
