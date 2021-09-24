@@ -7,6 +7,10 @@
   cursor: pointer;
 }
 
+.movie:last-child {
+  border-bottom: none;
+}
+
 .episode {
   color: #8b99a7;
   margin-right: 20px;
