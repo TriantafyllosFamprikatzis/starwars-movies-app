@@ -17,7 +17,7 @@ function Main() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const [filteredMovies, setFilteredMovies] = useState();
+  const [filteredMovies, setFilteredMovies] = useState(movies);
   const [searchTerm, setSearchTerm] = useState("");
 
   //Fetch Movies
@@ -66,9 +66,11 @@ function Main() {
 
   //Sort Movies
   const sortByEpisodeHandler = () => {
-    setFilteredMovies(
-      movies.sort((a, b) => parseFloat(a.id) - parseFloat(b.id))
-    );
+    setMovies(movies.slice().sort((a, b) => parseFloat(a.id) - parseFloat(b.id)));
+  };
+
+  const sortByYearHandler = () => {
+    setMovies(movies.slice().sort((a, b) => parseFloat(a.releaseDate) - parseFloat(b.releaseDate)));
   };
 
   //Modal Actions
@@ -110,6 +112,12 @@ function Main() {
                       onClick={sortByEpisodeHandler}
                     >
                       Sort by episode
+                    </Button>
+                    <Button
+                      className={classes["modal-container__sort-btn"]}
+                      onClick={sortByYearHandler}
+                    >
+                      Sort by Year
                     </Button>
                   </li>
                 </ul>
