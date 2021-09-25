@@ -61,6 +61,9 @@ function Main() {
   }, [searchTerm, movies]);
 
   const searchChangeHandler = (event) => {
+    if (showModal) {
+      dispatch(uiActions.close());
+    }
     setSearchTerm(event.target.value);
   };
 
