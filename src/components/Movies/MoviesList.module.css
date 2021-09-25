@@ -1,5 +1,6 @@
 .movies-container {
   display: flex;
+  padding-bottom: 50px;
 }
 
 .movies-list {
@@ -22,12 +23,14 @@
   width: 50%;
   padding: 0 30px;
   font-size: 16px;
+  border-bottom: 1px solid #e5ebee;
 }
 
 .movie-details {
   width: 50%;
   text-align: left;
   padding: 0 30px;
+  border-bottom: 1px solid #e5ebee;
 }
 
 .details-title {
